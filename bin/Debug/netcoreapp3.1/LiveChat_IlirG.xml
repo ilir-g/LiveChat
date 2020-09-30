@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LiveChat_IlirG</name>
+    </assembly>
+    <members>
+        <member name="T:LiveChat_IlirG.Controllers.UserController">
+            <summary>
+            Operations for user
+            </summary>
+        </member>
+        <member name="M:LiveChat_IlirG.Controllers.UserController.AllowUserToChatSync(LiveChat_IlirG.Models.ChatInput)">
+            <summary>
+            Connects user to the chat.
+            </summary>
+            /// <remarks>
+            Sample request:
+            
+                Get api/User/AllowUserToChat
+                {        
+                  "UserId": "1234",
+                  "RecipientId": "4567",
+                  "SecurityCode": "1111-2222-3333"        
+                  "Message": "Hello Wrold"        
+                }
+            </remarks>
+            <param name="input"></param>        
+            <returns>Returns true if the message has been send.</returns>
+             <response code="500">Return a server failure, i.e cannot connect to the database.</response>   
+        </member>
+        <member name="M:LiveChat_IlirG.Controllers.UserController.GetPreviousChatAsync(LiveChat_IlirG.Models.ChatInput)">
+            <summary>
+            Returns the chat list.
+            </summary>
+            <param name="input"></param>      
+            <returns>Returns a list of the object type ChatResponse.</returns>
+             <response code="500">Return a server failure, i.e cannot connect to the database.</response>   
+        </member>
+        <member name="M:LiveChat_IlirG.Controllers.UserController.GetUserContactListAsync(System.String,System.String)">
+            <summary>
+            Returns the user's contact list.
+            </summary>
+            <param name="UserId">UserId, who is sending the message</param>
+            <param name="SecurityCode">SecurityCode, for the user who is sending the message</param>
+            <returns>Returns a list of the object type UserResponse.</returns>
+             <response code="500">Return a server failure, i.e cannot connect to the database.</response>   
+        </member>
+        <member name="P:LiveChat_IlirG.Models.ChatInput.UserId">
+            <summary>
+            UserId who is sending the message
+            </summary>
+        </member>
+        <member name="P:LiveChat_IlirG.Models.ChatInput.RecipientId">
+            <summary>
+            RecipientId, who is getting the message
+            </summary>
+        </member>
+        <member name="P:LiveChat_IlirG.Models.ChatInput.SecurityCode">
+            <summary>
+            SecurityCode, for the user who is sending the message
+            </summary>
+        </member>
+        <member name="P:LiveChat_IlirG.Models.ChatInput.Message">
+            <summary>
+            Message, is the content you are sending to the user
+            </summary>
+        </member>
+    </members>
+</doc>
